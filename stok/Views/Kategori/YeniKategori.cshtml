@@ -1,4 +1,4 @@
-﻿
+﻿@model stok.Models.entity.TBLKATEGORILER
 @{
     ViewBag.Title = "YeniKategori";
     Layout = "~/Views/shared/_MainLayout.cshtml";
@@ -7,7 +7,8 @@
 <form class="form-group"method="post">
     <div>
         <label>Kategori Adı</label>
-        <input type="text" class="form-control"name="KATEGORIAD"/>
+       @Html.TextBoxFor(m=> m.KATEGORIAD,new {@class="form-control" })
+       @Html.ValidationMessageFor(m=>m.KATEGORIAD,"",new {@style="color:Red" })
     </div>
     <div style="margin-top:15px">
         <button class="btn btn-primary">Kategori Ekle</button>

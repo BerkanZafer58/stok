@@ -1,22 +1,22 @@
-﻿
+﻿@model stok.Models.entity.TBLURUNLER
 @{
     ViewBag.Title = "YeniUrun";
     Layout = "~/Views/shared/_MainLayout.cshtml";
 }
 
-<<form class="form-group" method="post">
+<form class="form-group" method="post">
     <div>
         <label>Ürün Adı</label>
-        <input type="text" class="form-control" name="URUNAD" />
+        <input type="text" class="form-control" name="URUNAD" required="" />
     </div>
     <div>
         <label>Markası</label>
-        <input type="text" class="form-control" name="MARKA" />
+        <input type="text" class="form-control" name="MARKA" required=""/>
     </div>
     <div>
         <label>Kategori seçiniz</label>
-        <input type="text" class="form-control" name="URUNKATEGORI" />
-    </div>
+        @Html.DropDownListFor(m => m.TBLKATEGORILER.KATEGORIID, (List<SelectListItem>)ViewBag.dgr, new { @class = "form-control" });
+    </div> 
     <div>
         <label>Fiyatı</label>
         <input type="text" class="form-control" name="FIYAT" />
@@ -26,7 +26,7 @@
         <input type="text" class="form-control" name="STOK" />
     </div>
 
-    </div>
+    
     <div style="margin-top:15px">
         <button class="btn btn-primary">Ürün Ekle</button>
     </div>
