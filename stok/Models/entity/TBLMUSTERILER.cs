@@ -22,7 +22,7 @@ namespace stok.Models.entity
         }
     
         public int MUSTERIID { get; set; }
-        [Required(ErrorMessage ="Bu Alaný Boþ Geçemezsiniz")]
+        [Required(ErrorMessage = "Bu Alaný Boþ Geçemezsiniz")]
         [StringLength(50, ErrorMessage = "En Fazla 50 Karakterlik Ýsim Giriniz")]
         public string MUSTERIAD { get; set; }
         public string MUSTERISOYAD { get; set; }

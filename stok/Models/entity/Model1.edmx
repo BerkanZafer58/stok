@@ -156,7 +156,7 @@
           </Key>
           <Property Name="URUNID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="URUNAD" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
-          <Property Name="MARKA" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="MARKA" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
           <Property Name="URUNKATEGORI" Type="Int16" />
           <Property Name="FIYAT" Type="Decimal" Precision="18" Scale="2" />
           <Property Name="STOK" Type="Byte" />

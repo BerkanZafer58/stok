@@ -14,11 +14,11 @@
         @Html.TextBoxFor(m => m.URUNAD, new { @class = "form-control" })
         <br />
         @Html.LabelFor(m => m.MARKA)
-        @Html.TextBoxFor(m => m.MARKA, new { @class = "form-control" })
+        @Html.TextAreaFor(m => m.MARKA, new { @class = "form-control", @id = "markaveaciklama" })
         <br />
         @Html.LabelFor(m => m.URUNKATEGORI)
-        @Html.DropDownListFor(m=>m.TBLKATEGORILER.KATEGORIID,(List<SelectListItem>)ViewBag.dgr, new { @class = "form-control" })
-      
+        @Html.DropDownListFor(m => m.TBLKATEGORILER.KATEGORIID, (List<SelectListItem>)ViewBag.dgr, new { @class = "form-control" })
+
         @Html.LabelFor(m => m.FIYAT)
         @Html.TextBoxFor(m => m.FIYAT, new { @class = "form-control" })
         <br />
@@ -31,4 +31,8 @@
         <button class="btn btn-warning">Ürün Güncelle</button>
     </div>
 }
+
+<script>
+        CKEDITOR.replace('markaveaciklama');
+</script>
 

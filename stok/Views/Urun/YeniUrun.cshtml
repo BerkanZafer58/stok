@@ -10,12 +10,12 @@
         <input type="text" class="form-control" name="URUNAD" required="" />
     </div>
     <div>
-        <label>Markası</label>
-        <input type="text" class="form-control" name="MARKA" required=""/>
+        <label>Marka ve Detaylar</label>
+        <textarea id="markaveaciklama" name="MARKA" class="form-control"></textarea>
     </div>
     <div>
         <label>Kategori seçiniz</label>
-        @Html.DropDownListFor(m => m.TBLKATEGORILER.KATEGORIID, (List<SelectListItem>)ViewBag.dgr, new { @class = "form-control" });
+        @Html.DropDownListFor(m => m.TBLKATEGORILER.KATEGORIID, (List<SelectListItem>)ViewBag.dgr, new { @class = "form-control" })
     </div> 
     <div>
         <label>Fiyatı</label>
@@ -32,3 +32,6 @@
     </div>
 
 
+    <script>
+        CKEDITOR.replace('markaveaciklama');
+    </script>

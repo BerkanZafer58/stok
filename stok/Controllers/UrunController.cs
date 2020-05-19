@@ -14,8 +14,15 @@ namespace stok.Controllers
         stokEntities db = new stokEntities();
         public ActionResult Index()
         {
-            var degerler = db.TBLURUNLER.ToList();
-            return View(degerler);
+            if (Convert.ToBoolean(Session["Yonetici"]) == true)
+            {
+                var degerler = db.TBLURUNLER.ToList();
+                return View(degerler);
+            }
+            else
+            {
+                return RedirectToAction("Index", "Home");
+            }
         }
         [HttpGet]
         public ActionResult YeniUrun()

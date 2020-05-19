@@ -15,8 +15,15 @@ namespace stok.Controllers
         stokEntities db = new stokEntities();
         public ActionResult Index(int Sayfa=1)
         {
-            var degerler = db.TBLKATEGORILER.ToList().ToPagedList(Sayfa,5);
-            return View(degerler);
+            if (Convert.ToBoolean(Session["Yonetici"]) == true)
+            {
+                var degerler = db.TBLKATEGORILER.ToList().ToPagedList(Sayfa, 5);
+                return View(degerler);
+            }
+            else
+            {
+                return RedirectToAction("Index", "Home");
+            }
         }
         [HttpGet]
         public ActionResult YeniKategori()
